@@ -16,6 +16,10 @@
             $datos=$dragonballZ->get_personaje_id($body["idPersonaje"]);
             echo json_encode($datos);
         break;
+        case 'GETPersonaje':
+            $datos=$dragonballZ->get_personaje_nombre($body["personaje"]);
+            echo json_encode($datos);
+            break;
         case "Insert":
             $datos=$dragonballZ->insert_personaje($body['personaje'],$body['raza'],$body['poderes'],$body['categoria'],);
             echo json_encode("Insert Correcto");

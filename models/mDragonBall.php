@@ -19,6 +19,15 @@
             $sql->execute();
             return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
         }
+        public function get_personaje_nombre($personaje){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT * FROM personajes WHERE personaje = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $personaje);
+            $sql->execute();
+            return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
+        }
 
         public function insert_personaje($personaje,$raza,$poderes,$categoria){
             $conectar= parent::conexion();
